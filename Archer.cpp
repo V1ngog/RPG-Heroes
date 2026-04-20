@@ -7,25 +7,26 @@
 Archer::Archer(std::string name, int health, int damage) 
     : Hero(name, health, damage) {}
 
-    void Archer::Attack(int bonusDamage) {
+    int Archer::Attack(int bonusDamage) {
         float finalDamage = this->damage;
   
         if ((rand() % 100) < ChanseCrit) {
             finalDamage = this->damage * critDamage;
-            std::cout << "КРИТИЧЕСКИЙ УДАР";
+            std::cout << "КРИТИЧЕСКИЙ УДАР\n";
         }
-        std::cout << "Лучник " << name << " атакует из лука и наносит " << finalDamage << "едениц урона";
+        std::cout << "Лучник " << name << " атакует из лука и наносит " << finalDamage << "едениц урона\n";
+        return finalDamage;
     }
 
-    void Archer::SpecialAbility() {
-        std::cout << "Лучник " << name << " наносит удар и поглащает следующий удар волшебной мантией";
-        Attack(0);
+    void Archer::SpecialAbility(Hero& target) {
+        std::cout << "Лучник " << name << " наносит удар и поглащает следующий удар волшебной мантией\n";
+        target.TakeDamage(Attack(0));
         magicCloak += 1;
     }
 
     void Archer::TakeDamage(int damage) {
         if (magicCloak >= 1) {
-            std::cout << "Удар поглащён аолнебной мантией";
+            std::cout << "Удар поглащён аолнебной мантией\n";
             magicCloak -= 1;
         }
         else {

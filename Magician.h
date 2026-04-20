@@ -13,8 +13,8 @@ private:
 
 public:
     Magician(std::string name, int health, int damage);
-        void Attack(int damageBonus) override;
-        void SpecialAbility() override;
+        int Attack(int damageBonus) override;
+        void SpecialAbility(Hero& target) override;
         void TakeDamage(int damage) override;
 };
 #endif
