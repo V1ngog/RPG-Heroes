@@ -1,0 +1,16 @@
+#ifndef WARRIOR_H
+#define WARRIOR_H
+#include "Hero.h"
+
+class Magician : public Hero
+{
+private:
+    int ChanceMirror = 30;
+    int DamageBigBall = 5;
+public:
+    Magician(std::string name, int health, int damage);
+        void Attack(int damageBonus) override;
+        void SpecialAbility() override;
+        void TakeDamage(int damage) override;
+};
+#endif
