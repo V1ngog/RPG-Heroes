@@ -8,14 +8,14 @@ Warrior::Warrior(std::string name, int health, int damage)
 
     void Warrior::Attack(int damageBonus)  {
         int damage = this->damage + damageBonus;
-        std::cout << "Р’РѕРёРЅ " << name << " РќР°РЅРѕСЃРёС‚ СѓРґР°СЂ РјРµС‡РѕРј Рё РЅР°РЅРѕСЃРёС‚ " << damage << " РµРґРёРЅРёС† СѓСЂРѕРЅР°";
+        std::cout << "Воин " << name << " Наносит удар мечом и наносит " << damage << " единиц урона";
     }
 
     void Warrior::SpecialAbility() {
-        std::cout << "Р’РѕРёРЅ " << name << " Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃРІРѕС‘ Р·РґРѕСЂРѕРІСЊРµ РЅР° " << shield;
+        std::cout << "Воин " << name << " Восстанавливает своё здоровье на " << shield;
         this->health += shield;
 
-        std::cout << "Р’РѕРёРЅ " << name << " РІС‹РїРѕР»РЅСЏРµС‚ СЃРµСЂРёСЋ РїСЂРёРµРјРѕРІ РїРѕРґ СЏСЂРѕСЃС‚СЊСЋ ";
+        std::cout << "Воин " << name << " выполняет серию приемов под яростью ";
         Attack(rage);
         Attack(rage);
     }

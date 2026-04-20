@@ -12,20 +12,20 @@ Archer::Archer(std::string name, int health, int damage)
   
         if ((rand() % 100) < ChanseCrit) {
             finalDamage = this->damage * critDamage;
-            std::cout << "ÐšÐ Ð˜Ð¢Ð˜Ð§Ð•Ð¡ÐšÐ˜Ð™ Ð£Ð”ÐÐ ";
+            std::cout << "ÊÐÈÒÈ×ÅÑÊÈÉ ÓÄÀÐ";
         }
-        std::cout << "Ð›ÑƒÑ‡Ð½Ð¸Ðº " << name << " Ð°Ñ‚Ð°ÐºÑƒÐµÑ‚ Ð¸Ð· Ð»ÑƒÐºÐ° Ð¸ Ð½Ð°Ð½Ð¾ÑÐ¸Ñ‚ " << finalDamage << "ÐµÐ´ÐµÐ½Ð¸Ñ† ÑƒÑ€Ð¾Ð½Ð°";
+        std::cout << "Ëó÷íèê " << name << " àòàêóåò èç ëóêà è íàíîñèò " << finalDamage << "åäåíèö óðîíà";
     }
 
     void Archer::SpecialAbility() {
-        std::cout << "Ð›ÑƒÑ‡Ð½Ð¸Ðº " << name << " Ð½Ð°Ð½Ð¾ÑÐ¸Ñ‚ ÑƒÐ´Ð°Ñ€ Ð¸ Ð¿Ð¾Ð³Ð»Ð°Ñ‰Ð°ÐµÑ‚ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑƒÐ´Ð°Ñ€ Ð²Ð¾Ð»ÑˆÐµÐ±Ð½Ð¾Ð¹ Ð¼Ð°Ð½Ñ‚Ð¸ÐµÐ¹";
+        std::cout << "Ëó÷íèê " << name << " íàíîñèò óäàð è ïîãëàùàåò ñëåäóþùèé óäàð âîëøåáíîé ìàíòèåé";
         Attack(0);
         magicCloak += 1;
     }
 
     void Archer::TakeDamage(int damage) {
         if (magicCloak >= 1) {
-            std::cout << "Ð£Ð´Ð°Ñ€ Ð¿Ð¾Ð³Ð»Ð°Ñ‰Ñ‘Ð½ Ð°Ð¾Ð»Ð½ÐµÐ±Ð½Ð¾Ð¹ Ð¼Ð°Ð½Ñ‚Ð¸ÐµÐ¹";
+            std::cout << "Óäàð ïîãëàù¸í àîëíåáíîé ìàíòèåé";
             magicCloak -= 1;
         }
         else {

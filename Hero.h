@@ -36,11 +36,11 @@ public:
     }
 
     void Phrase_1() const {
-        std::cout << "Ğ˜Ğ¼Ñ: " << name << ", Ğ£Ñ€Ğ¾Ğ½: " << damage << ", Ğ—Ğ´Ğ¾Ñ€Ğ¾Ğ²ÑŒĞµ: " << health;
+        std::cout << "Èìÿ: " << name << ", Óğîí: " << damage << ", Çäîğîâüå: " << health;
     }
     
     void Phrase_2() const {
-        std::cout << "Ğ˜Ğ¼Ñ: " << name << ", Ğ—Ğ´Ğ¾Ñ€Ğ¾Ğ²ÑŒĞµ: " << health;
+        std::cout << "Èìÿ: " << name << ", Çäîğîâüå: " << health;
     }
 
     virtual void Attack(int damageBonus) = 0;

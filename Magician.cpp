@@ -9,13 +9,13 @@ Magician::Magician(std::string name, int health, int damage)
         int finalDamage = damage + damageBonus;
         if ((rand() % 100) < ChanceBigBall) {
             finalDamage += DamageBigBall;
-            std::cout << "Ð‘ÐžÐ›Ð¬Ð¨ÐžÐ™ Ð¤ÐÐ•Ð Ð‘ÐžÐ›";
+            std::cout << "ÁÎËÜØÎÉ ÔÀÅÐÁÎË";
         }
-        std::cout << "ÐœÐ°Ð³ " << name << " Ð½Ð°Ð½Ð¾ÑÐ¸Ñ‚ ÑƒÑ€Ð¾Ð½ Ñ„Ð°ÐµÑ€Ð±Ð¾Ð»Ð¾Ð¼ Ð² Ñ€Ð°Ð·Ð¼ÐµÑ€Ðµ " << finalDamage << " Ð•Ð´ÐµÐ½Ð¸Ñ†";
+        std::cout << "Ìàã " << name << " íàíîñèò óðîí ôàåðáîëîì â ðàçìåðå " << finalDamage << " Åäåíèö";
     }
 
     void Magician::SpecialAbility() {
-        std::cout << "ÐœÐ°Ð³ ÐºÐ¾Ð»Ð´ÑƒÐµÑ‚ ÐœÐ•Ð¢Ð•ÐžÐ Ð˜Ð¢ÐÐ«Ð™ Ð”ÐžÐ–Ð”Ð¬";
+        std::cout << "Ìàã êîëäóåò ÌÅÒÅÎÐÈÒÍÛÉ ÄÎÆÄÜ";
         Attack(10);
         Attack(10);
     }
@@ -24,7 +24,7 @@ Magician::Magician(std::string name, int health, int damage)
         int finalDamage = damage;
 
         if ((rand() % 100) < ChanceMirror) {
-            std::cout << "ÐœÐ°Ð³ Ð¾Ñ‚Ñ€Ð°Ð¶Ð°ÐµÑ‚ Ð¿Ð¾Ð»Ð¾Ð²Ð½Ñƒ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ð¾Ð³Ð¾ ÑƒÑ€Ð¾Ð½Ð° Ð¾Ð±Ñ€Ð°Ñ‚Ð½Ð¾";
+            std::cout << "Ìàã îòðàæàåò ïîëîâíó ïîëó÷åííîãî óðîíà îáðàòíî";
             finalDamage /= 2;
             Attack(finalDamage);
         }
