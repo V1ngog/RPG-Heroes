@@ -1,5 +1,5 @@
-#ifndef WARRIOR_H
-#define WARRIOR_H
+#ifndef MAGICIAN_H
+#define MAGICIAN_H
 
 #include "Hero.h"
 #include <iostream>
