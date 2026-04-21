@@ -35,18 +35,12 @@ public:
         return health > 0;
     }
 
-    void Phrase_1() const {
-        std::cout << "Имя: " << name << ", Урон: " << damage << ", Здоровье: " << health << "\n";
-    }
-    
-    void Phrase_2() const {
-        std::cout << "Имя: " << name << ", Здоровье: " << health << "\n";
-    }
+    void Phrase_1() const;
+    void Phrase_2() const;
 
-    virtual int Attack(int damageBonus) = 0;
+    virtual void Attack(int damageBonus, Hero& target) = 0;
     virtual void SpecialAbility(Hero& target) = 0;
-    virtual void TakeDamage(int damage) = 0;
-    
+    virtual void TakeDamage(float damage) = 0;
 
 };
 #endif

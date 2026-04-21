@@ -6,21 +6,22 @@ Warrior::Warrior(std::string name, int health, int damage)
         this->health += shield;
     }
 
-    int Warrior::Attack(int damageBonus)  {
-        int damage = this->damage + damageBonus;
-        std::cout << "Воин " << name << " Наносит удар мечом и наносит " << damage << " единиц урона\n";
-        return damage;
+    void Warrior::Attack(int damageBonus, Hero& target)  {
+        int finalDamage = this->damage + damageBonus;
+        std::cout << "пїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " << finalDamage << " пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n";
+        target.TakeDamage(finalDamage);
     }
 
     void Warrior::SpecialAbility(Hero& target) {
-        std::cout << "Воин " << name << " Восстанавливает своё здоровье на " << shield << "\n";
+        std::cout << "пїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ " << shield << "\n";
         this->health += shield;
 
-        std::cout << "Воин " << name << " выполняет серию приемов под яростью \n";
-        target.TakeDamage(Attack(rage) + Attack(rage));
+        std::cout << "пїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ \n";
+        Attack(rage, target);
+        Attack(rage, target);
     }
 
-    void Warrior::TakeDamage(int damage) {
+    void Warrior::TakeDamage(float damage) {
         setHealth(getHealth() - damage);
         Phrase_2();
     }

@@ -19,7 +19,8 @@ int main()
         new Magician("Доридон-Зловещий посох", 90, 20)
     };
 
-    for (int i = 0; i < sizeof(heroes) / sizeof(heroes[0]); i++) 
+    int sizeList = sizeof(heroes) / sizeof(heroes[0]);
+    for (int i = 0; i < sizeList; i++) 
     {
         std::cout << i + 1 << ".";
         heroes[i]->Phrase_1();
@@ -31,7 +32,7 @@ int main()
         std::cout << "Выбери своего героя от 1 до 3:\n";
         if (std::cin >> chouce) 
         {
-            if (chouce >= 1 && chouce <= 3) break;
+            if (chouce >= 1 && chouce <= sizeList) break;
         }
         std::cout << "Ошибка\n";
         std::cin.clear();
@@ -46,17 +47,14 @@ int main()
     goblin.Phrase_1();
 
     std::vector<Hero*> both = {player, &goblin};
-    int playerDamage = both[0]->getDamage();
-    int enemyDamage = both[1]->getDamage();
 
     std::cout << "\n=== НАЧАЛО БОЯ ===\n";
     
     while (player->isAlive() && goblin.isAlive()) 
     {
         std::cout << "\nТвой ход!\n";
-        both[0]->Attack(0);
+        both[0]->Attack(0, *both[1]);
         both[0]->SpecialAbility(goblin);
-        both[1]->TakeDamage(playerDamage);
         
         if (!goblin.isAlive()) 
         {
@@ -65,10 +63,9 @@ int main()
         }
         
         std::cout << "\nХод врага!\n";
-        both[1]->Attack(0);
+        both[1]->Attack(0, *both[0]);
         both[1]->SpecialAbility(*player);
-        both[0]->TakeDamage(enemyDamage);
-        
+
         std::cout << "Твоё здоровье: " << player->getHealth() << " | Здоровье врага: " << goblin.getHealth() << "\n";
     }
     
@@ -81,5 +78,8 @@ int main()
         std::cout << "ТЫ БЕЗДАРЬ...\n";
     }
 
+    for (int i = 0; i < sizeList; i++) {
+    delete heroes[i];
+}
     return 0;
 }   

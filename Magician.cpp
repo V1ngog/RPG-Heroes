@@ -5,30 +5,29 @@
 Magician::Magician(std::string name, int health, int damage)
     : Hero(name, health, damage) {}
 
-    int Magician::Attack(int damageBonus) {
-        int finalDamage = damage + damageBonus;
+    void Magician::Attack(int damageBonus, Hero& target) {
+        int finalDamage = this->damage + damageBonus;
         if ((rand() % 100) < ChanceBigBall) {
             finalDamage += DamageBigBall;
-            std::cout << "БОЛЬШОЙ ФАЕРБОЛ\n";
+            std::cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n";
         }
-        std::cout << "Маг " << name << " наносит урон фаерболом в размере " << finalDamage << " Едениц\n";
-        return finalDamage;
+        std::cout << "пїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " << finalDamage << " пїЅпїЅпїЅпїЅпїЅпїЅ\n";
+        target.TakeDamage(finalDamage);
     }
 
     void Magician::SpecialAbility(Hero& target) {
-        std::cout << "Маг колдует МЕТЕОРИТНЫЙ ДОЖДЬ\n";
-        int d1 = Attack(10);
-        int d2 = Attack(10);
-        target.TakeDamage(d1 + d2);
+        std::cout << "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n";
+        Attack(10, target);
+        Attack(10, target);
     }
 
-    void Magician::TakeDamage(int damage) {
+    void Magician::TakeDamage(float damage) {
         int finalDamage = damage;
 
         if ((rand() % 100) < ChanceMirror) {
-            std::cout << "Маг отражает половну полученного урона обратно\n";
+            std::cout << "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n";
             finalDamage /= 2;
-            Attack(finalDamage);
+            this->damage += 5;
         }
 
         setHealth(getHealth() - finalDamage);

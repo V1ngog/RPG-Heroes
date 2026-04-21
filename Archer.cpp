@@ -7,26 +7,26 @@
 Archer::Archer(std::string name, int health, int damage) 
     : Hero(name, health, damage) {}
 
-    int Archer::Attack(int bonusDamage) {
-        float finalDamage = this->damage;
+    void Archer::Attack(int bonusDamage, Hero& target) {
+        float finalDamage = this->damage + bonusDamage;
   
         if ((rand() % 100) < ChanseCrit) {
             finalDamage = this->damage * critDamage;
-            std::cout << "КРИТИЧЕСКИЙ УДАР\n";
+            std::cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ\n";
         }
-        std::cout << "Лучник " << name << " атакует из лука и наносит " << finalDamage << "едениц урона\n";
-        return finalDamage;
+        std::cout << "пїЅпїЅпїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " << finalDamage << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n";
+        target.TakeDamage(finalDamage);
     }
 
     void Archer::SpecialAbility(Hero& target) {
-        std::cout << "Лучник " << name << " наносит удар и поглащает следующий удар волшебной мантией\n";
-        target.TakeDamage(Attack(0));
+        std::cout << "пїЅпїЅпїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n";
+        Attack(0, target);
         magicCloak += 1;
     }
 
-    void Archer::TakeDamage(int damage) {
+    void Archer::TakeDamage(float damage) {
         if (magicCloak >= 1) {
-            std::cout << "Удар поглащён аолнебной мантией\n";
+            std::cout << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\n";
             magicCloak -= 1;
         }
         else {

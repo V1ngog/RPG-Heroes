@@ -3,16 +3,17 @@
 Enemy::Enemy(std::string name, int health, int damage)
     : Hero(name, health, damage) {}
 
-    int Enemy::Attack(int damageBonus) {
-        std::cout << "Враг " << name << " Наносит удар дубиной и наносит " << damage << " единиц урона\n";
-        return damage;
+    void Enemy::Attack(int damageBonus, Hero& target) {
+        float finalDamage = this->damage + damageBonus;
+        std::cout << "пїЅпїЅпїЅпїЅ " << name << " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " << finalDamage << " пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n";
+        target.TakeDamage(finalDamage);
     }
 
     void Enemy::SpecialAbility(Hero& target) {
-        std::cout << "Враг слишком слаб и не имеет особых умений\n";
+        std::cout << "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\n";
     }
 
-    void Enemy::TakeDamage(int damage) {
+    void Enemy::TakeDamage(float damage) {
         setHealth(getHealth() - damage);
         Phrase_2();
     }

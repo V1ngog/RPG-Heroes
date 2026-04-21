@@ -7,13 +7,13 @@
 class Warrior : public Hero
 {
 private:
-    int shield = 15;
-    int rage = 5;
+    int const shield = 15;
+    int const rage = 5;
 
 public:
     Warrior(std::string name, int health, int damage);
-        int Attack(int damageBonus) override;
+        void Attack(int damageBonus, Hero& target) override;
         void SpecialAbility(Hero& target) override;
-        void TakeDamage(int damage) override;
+        void TakeDamage(float damage) override;
 };
 #endif
