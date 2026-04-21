@@ -23,7 +23,7 @@ int main()
     for (int i = 0; i < sizeList; i++) 
     {
         std::cout << i + 1 << ".";
-        heroes[i]->Phrase_1();
+        heroes[i]->PrintStats();
     }
 
     int chouce;
@@ -40,11 +40,11 @@ int main()
     }
 
     Hero* player = heroes[chouce - 1];
-    player->Phrase_1();
+    player->PrintStats();
 
     Enemy goblin("Орк", 175, 15);
     std::cout << "\nВаш противник:\n";
-    goblin.Phrase_1();
+    goblin.PrintStats();
 
     std::vector<Hero*> both = {player, &goblin};
 

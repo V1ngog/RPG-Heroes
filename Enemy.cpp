@@ -15,5 +15,5 @@ Enemy::Enemy(std::string name, int health, int damage)
 
     void Enemy::TakeDamage(float damage) {
         setHealth(getHealth() - damage);
-        Phrase_2();
+        PrintHealth();
     }

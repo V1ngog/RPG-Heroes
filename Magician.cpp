@@ -31,5 +31,5 @@ Magician::Magician(std::string name, int health, int damage)
         }
 
         setHealth(getHealth() - finalDamage);
-        Phrase_2();
+        PrintHealth();
     }

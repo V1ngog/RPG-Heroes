@@ -35,8 +35,8 @@ public:
         return health > 0;
     }
 
-    void Phrase_1() const;
-    void Phrase_2() const;
+    void PrintStats() const;
+    void PrintHealth() const;
 
     virtual void Attack(int damageBonus, Hero& target) = 0;
     virtual void SpecialAbility(Hero& target) = 0;

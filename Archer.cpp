@@ -31,6 +31,6 @@ Archer::Archer(std::string name, int health, int damage)
         }
         else {
             setHealth(getHealth() - damage);
-            Phrase_2();
+            PrintHealth();
         }
     }

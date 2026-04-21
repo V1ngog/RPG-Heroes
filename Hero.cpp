@@ -6,10 +6,10 @@ Hero::Hero(std::string name, int health, int damage) {
     this->damage = damage;
 }
 
-void Hero::Phrase_1() const {
+void Hero::PrintStats() const {
     std::cout << "���: " << name << ", ����: " << damage << ", ��������: " << health << "\n";
 }
 
-void Hero::Phrase_2() const {
+void Hero::PrintHealth() const {
     std::cout << "���: " << name << ", ��������: " << health << "\n";
 }
