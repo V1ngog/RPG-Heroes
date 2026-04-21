@@ -16,6 +16,6 @@ public:
     Magician(std::string name, int health, int damage);
         void Attack(int damageBonus, Hero& target) override;
         void SpecialAbility(Hero& target) override;
-        void TakeDamage(float damage) override;
+        void TakeDamage(int damage) override;
 };
 #endif

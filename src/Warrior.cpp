@@ -21,7 +21,7 @@ Warrior::Warrior(std::string name, int health, int damage)
         Attack(rage, target);
     }
 
-    void Warrior::TakeDamage(float damage) {
+    void Warrior::TakeDamage(int damage) {
         setHealth(getHealth() - damage);
         PrintHealth();
     }

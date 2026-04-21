@@ -13,7 +13,7 @@ Enemy::Enemy(std::string name, int health, int damage)
         std::cout << "���� ������� ���� � �� ����� ������ ������\n";
     }
 
-    void Enemy::TakeDamage(float damage) {
+    void Enemy::TakeDamage(int damage) {
         setHealth(getHealth() - damage);
         PrintHealth();
     }

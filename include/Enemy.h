@@ -11,7 +11,7 @@ public:
 
     void Attack(int damageBonus, Hero& target) override;
     void SpecialAbility(Hero& target) override;
-    void TakeDamage(float damage) override;
+    void TakeDamage(int damage) override;
 
 };
 #endif

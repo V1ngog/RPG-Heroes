@@ -21,7 +21,7 @@ Magician::Magician(std::string name, int health, int damage)
         Attack(10, target);
     }
 
-    void Magician::TakeDamage(float damage) {
+    void Magician::TakeDamage(int damage) {
         int finalDamage = damage;
 
         if ((rand() % 100) < ChanceMirror) {

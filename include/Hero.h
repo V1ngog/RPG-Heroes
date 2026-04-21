@@ -40,7 +40,7 @@ public:
 
     virtual void Attack(int damageBonus, Hero& target) = 0;
     virtual void SpecialAbility(Hero& target) = 0;
-    virtual void TakeDamage(float damage) = 0;
+    virtual void TakeDamage(int damage) = 0;
 
 };
 #endif

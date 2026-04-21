@@ -24,7 +24,7 @@ Archer::Archer(std::string name, int health, int damage)
         magicCloak += 1;
     }
 
-    void Archer::TakeDamage(float damage) {
+    void Archer::TakeDamage(int damage) {
         if (magicCloak >= 1) {
             std::cout << "���� �������� ��������� �������\n";
             magicCloak -= 1;
