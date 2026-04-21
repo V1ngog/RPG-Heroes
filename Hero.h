@@ -11,6 +11,10 @@ protected:
     int health;
     std::string name;
 
+    void setHealth(int health) {
+        this->health = health;
+    } 
+
 public:
     Hero(std::string name, int health, int damage);
     virtual ~Hero() {}
@@ -26,10 +30,6 @@ public:
     int getDamage() const {
         return damage;
     }
-
-    void setHealth(int health) {
-        this->health = health;
-    } 
 
     bool isAlive() const {
         return health > 0;
