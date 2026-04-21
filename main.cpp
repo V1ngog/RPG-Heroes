@@ -7,17 +7,20 @@
 #include "Enemy.h"
 #include <vector>
 
-int main() {
+int main() 
+{
     srand(time(0));
     system("chcp 1251");
 
-    Hero* heroes[] = {
+    Hero* heroes[] = 
+    {
         new Warrior("Олег-Ясный сокол", 150, 10),
         new Archer("Артур-Шоколадный глаз", 120, 15),
         new Magician("Доридон-Зловещий посох", 90, 20)
     };
 
-    for (int i = 0; i < sizeof(heroes) / sizeof(heroes[0]); i++) {
+    for (int i = 0; i < sizeof(heroes) / sizeof(heroes[0]); i++) 
+    {
         std::cout << i + 1 << ".";
         heroes[i]->Phrase_1();
     }
@@ -48,13 +51,15 @@ int main() {
 
     std::cout << "\n=== НАЧАЛО БОЯ ===\n";
     
-    while (player->isAlive() && goblin.isAlive()) {
+    while (player->isAlive() && goblin.isAlive()) 
+    {
         std::cout << "\nТвой ход!\n";
         both[0]->Attack(0);
         both[0]->SpecialAbility(goblin);
         both[1]->TakeDamage(playerDamage);
         
-        if (!goblin.isAlive()) {
+        if (!goblin.isAlive()) 
+        {
             std::cout << "\nВраг повержен!\n";
             break;
         }
@@ -64,15 +69,16 @@ int main() {
         both[1]->SpecialAbility(*player);
         both[0]->TakeDamage(enemyDamage);
         
-        std::cout << "Твоё здоровье: " << player->getHealth() 
-                  << " | Здоровье врага: " << goblin.getHealth() << "\n";
+        std::cout << "Твоё здоровье: " << player->getHealth() << " | Здоровье врага: " << goblin.getHealth() << "\n";
     }
     
     std::cout << "\n=== РЕЗУЛЬТАТ ===\n";
-    if (player->isAlive()) {
+    if (player->isAlive()) 
+    {
         std::cout << "ТЫ ПОБЕДИЛ!\n";
-    } else {
-        std::cout << "ТЫ ПРОИГРАЛ...\n";
+    } else 
+    {
+        std::cout << "ТЫ БЕЗДАРЬ...\n";
     }
 
     return 0;
