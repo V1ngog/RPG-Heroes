@@ -1,8 +1,10 @@
 #include "Archer.h"
-#include <cstdlib>  
-#include <ctime>  
+#include <random>
 
+std::random_device rd;
+std::mt19937 gen(rd());
 
+std::uniform_int_distribution<> chanceDist(0, 99);
 
 Archer::Archer(std::string name, int health, int damage) 
     : Hero(name, health, damage) {}
@@ -10,8 +12,8 @@ Archer::Archer(std::string name, int health, int damage)
     void Archer::Attack(int bonusDamage, Hero& target) {
         float finalDamage = this->damage + bonusDamage;
   
-        if ((rand() % 100) < ChanseCrit) {
-            finalDamage = this->damage * critDamage;
+        if (chanceDist(gen) < ChanseCrit) {
+            finalDamage = this->damage * critDamage + bonusDamage;
             std::cout << "����������� ����\n";
         }
         std::cout << "������ " << name << " ������� �� ���� � ������� " << finalDamage << "������ �����\n";

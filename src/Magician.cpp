@@ -1,13 +1,17 @@
 #include "Magician.h"
-#include <cstdlib>  
-#include <ctime>  
+#include <random>
+
+std::random_device rd;
+std::mt19937 gen(rd());
+
+std::uniform_int_distribution<> ChanceDist (0, 99);
 
 Magician::Magician(std::string name, int health, int damage)
     : Hero(name, health, damage) {}
 
     void Magician::Attack(int damageBonus, Hero& target) {
         int finalDamage = this->damage + damageBonus;
-        if ((rand() % 100) < ChanceBigBall) {
+        if (ChanceDist(gen) < ChanceBigBall) {
             finalDamage += DamageBigBall;
             std::cout << "������� �������\n";
         }
@@ -27,7 +31,7 @@ Magician::Magician(std::string name, int health, int damage)
         if ((rand() % 100) < ChanceMirror) {
             std::cout << "��� �������� ������� ����������� ����� �������\n";
             finalDamage /= 2;
-            this->damage += 5;
+            this->damage += DamageUp;
         }
 
         setHealth(getHealth() - finalDamage);
