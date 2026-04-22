@@ -7,8 +7,8 @@
 class Warrior : public Hero
 {
 private:
-    int const shield = 15;
-    int const rage = 5;
+    int const shield = 15; //+health when SpecialAbility
+    int const rage = 5; //+damage when SpecialAbility
 
 public:
     Warrior(std::string name, int health, int damage);

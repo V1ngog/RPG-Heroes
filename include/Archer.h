@@ -7,9 +7,9 @@
 class Archer : public Hero
 {
 private:
-    int magicCloak = 0;
+    int magicCloak = 0; //the number of charges that absorb all damage taken
     int const ChanseCrit = 30;
-    float const critDamage = 1.5;
+    int const critDamage = 2;
 public:
     Archer(std::string name, int health, int damage);
         void Attack(int damageBonus, Hero& target) override;
